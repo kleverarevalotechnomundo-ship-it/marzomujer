@@ -560,31 +560,20 @@ Gracias por existir e inspirarnos cada día.
 <script>
 
 function abrirSobre(){
+  let sobre = document.getElementById("sobre")
+  sobre.classList.add("abierto")  // anima la apertura del sobre
 
-let sobre=document.getElementById("sobre")
+  setTimeout(()=>{
+    document.querySelector(".intro").style.display="none"
+    document.getElementById("contenido").style.display="block"
 
-sobre.classList.add("abierto")
+    let musica = document.getElementById("musica")
+    musica.play().catch(()=>{}) // evita errores si autoplay está bloqueado
 
-setTimeout(()=>{
-
-document.querySelector(".intro").style.display="none"
-document.getElementById("contenido").style.display="block"
-
-let musica=document.getElementById("musica")
-musica.play().catch(()=>{})
-
-flores()
-
-},1000)
-
+    flores() // lanza las flores animadas
+  }, 1000)
 }
 
-let carta=document.getElementById("carta")
-
-carta.classList.add("abierta")
-
-setTimeout(()=>{
-
 document.querySelector(".intro").style.display="none"
 document.getElementById("contenido").style.display="block"
 
@@ -592,8 +581,6 @@ let musica=document.getElementById("musica")
 musica.play().catch(()=>{})
 
 flores()
-
-},1000)
 
 
 function crearFlor(){
@@ -629,3 +616,4 @@ setInterval(crearFlor,400)
 </body>
 
 </html>
+
