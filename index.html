@@ -317,37 +317,35 @@ Gracias por existir e inspirarnos cada día.
 <!-- ======== SCRIPT ======== -->
 <script>
 function abrirSobre(){
-  let sobre = document.getElementById("sobre");
-  sobre.classList.add("abierto");
+  let sobre=document.getElementById("sobre")
+  sobre.classList.add("abierto")
 
   setTimeout(()=>{
-    document.querySelector(".intro").style.display="none";
-    document.getElementById("contenido").style.display="block";
+    document.querySelector(".intro").style.display="none"
+    document.getElementById("contenido").style.display="block"
 
-    let musica = document.getElementById("musica");
-    musica.play().catch(()=>{}); // evita errores si autoplay está bloqueado
+    let musica=document.getElementById("musica")
+    musica.play().catch(()=>{})
 
-    flores();
-  }, 1000);
+    flores()
+  },1000)
 }
 
 function crearFlor(){
-  let flores=["🌸","🌺","🌹","🌷","🌻","💖"];
-  let f=document.createElement("div");
-  f.classList.add("flor");
-  f.innerHTML = flores[Math.floor(Math.random()*flores.length)];
-  f.style.left = Math.random()*100 + "%";
-  f.style.animationDuration = 3 + Math.random()*5 + "s";
-  document.body.appendChild(f);
-  setTimeout(()=>{ f.remove(); },8000);
+  let flores=["🌸","🌺","🌹","🌷","🌻","💖"]
+  let f=document.createElement("div")
+  f.classList.add("flor")
+  f.innerHTML=flores[Math.floor(Math.random()*flores.length)]
+  f.style.left=Math.random()*100+"%"
+  f.style.animationDuration=3+Math.random()*5+"s"
+  document.body.appendChild(f)
+  setTimeout(()=>{ f.remove() },8000)
 }
 
 function flores(){
-  setInterval(crearFlor,400);
+  setInterval(crearFlor,400)
 }
 </script>
 
 </body>
 </html>
-
-
