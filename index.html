@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Feliz Día Internacional de la Mujer</title>
+
+<style>
+
+body{
+margin:0;
+font-family:"Bookman Old Style", serif;
+text-align:center;
+overflow-x:hidden;
+
+background-image:url("fondo.avif");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:fixed;
+}
+
+@keyframes fondo{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+
+/* INTRO */
+
+.intro{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+color:rgb(105, 21, 21);
+}
+/* CARTA */
+
+.carta{
+background:#219ea7;
+padding:60px 50px;
+border-radius:15px;
+max-width:500px;
+text-align:center;
+box-shadow:0 20px 40px rgba(0,0,0,0.25);
+border:3px solid #1a7cb9;
+transition:1s;
+}
+
+.carta.abierta{
+transform:scale(0);
+opacity:0;
+}
+
+/* CORAZON */
+
+.corazon{
+margin-top:30px;
+width:80px;
+height:80px;
+background:#ff4d6d;
+border:none;
+transform:rotate(-45deg);
+cursor:pointer;
+position:relative;
+animation:latido 1s infinite;
+}
+
+.corazon:before,
+.corazon:after{
+content:"";
+width:80px;
+height:80px;
+background:#ff4d6d;
+border-radius:50%;
+position:absolute;
+}
+
+.corazon:before{
+top:-40px;
+left:0;
+}
+
+.corazon:after{
+left:40px;
+top:0;
+}
+
+/* ANIMACION LATIDO */
+
+@keyframes latido{
+
+0%{transform:rotate(-45deg) scale(1)}
+
+50%{transform:rotate(-45deg) scale(1.15)}
+
+100%{transform:rotate(-45deg) scale(1)}
+
+}
+
+.intro h1{
+font-size:42px;
+max-width:700px;
+}
+
+.btn{
+margin-top:30px;
+padding:16px 40px;
+font-size:18px;
+border:none;
+border-radius:40px;
+background:rgb(212, 157, 157);
+color:#e05c88;
+cursor:pointer;
+font-weight:bold;
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.1);
+}
+/* SOBRE */
+
+.sobre{
+position:relative;
+width:420px;
+height:260px;
+background:#f8dede;
+border-radius:10px;
+box-shadow:0 20px 40px rgba(0,0,0,0.25);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+transition:1s;
+}
+
+/* SOLAPA TRIANGULAR */
+
+.solapa{
+position:absolute;
+top:0;
+left:0;
+width:0;
+height:0;
+border-left:210px solid transparent;
+border-right:210px solid transparent;
+border-top:140px solid #a9468a;
+transform-origin:top;
+transition:1s;
+}
+
+/* TEXTO DE CARTA */
+
+.carta-texto{
+z-index:2;
+text-align:center;
+padding:20px;
+}
+
+.carta-texto h1{
+font-size:28px;
+color:#8b1e3f;
+}
+
+.carta-texto p{
+color:#883b7b;
+}
+
+/* SELLO CORAZON */
+
+.sello{
+position:absolute;
+bottom:20px;
+font-size:32px;
+background:none;
+border:none;
+cursor:pointer;
+transition:0.3s;
+}
+
+.sello:hover{
+transform:scale(1.2);
+}
+
+/* ANIMACION ABRIR */
+
+.sobre.abierto .solapa{
+transform:rotateX(180deg);
+}
+
+.sobre.abierto{
+transform:scale(0);
+opacity:0;
+}
+
+/* CONTENIDO */
+
+.content{
+display:none;
+animation:fade 2s;
+}
+
+@keyframes fade{
+from{opacity:0}
+to{opacity:1}
+}
+
+/* HERO */
+
+.hero{
+text-align:center;
+padding:40px;
+}
+
+.titulo-principal{
+font-family:"Lucida Calligraphy", cursive;
+color:#960018;
+font-size:48px;
+margin-bottom:25px;
+text-shadow:2px 2px 10px rgba(0,0,0,0.6);
+}
+
+.hero-img{
+width:90%;
+max-width:900px;
+border-radius:20px;
+margin-bottom:20px;
+}
+
+.hero h1{
+font-size:46px;
+}
+
+.texto-hero{
+color:#560f8d;
+font-size:20px;
+}
+
+/* MENSAJE */
+
+.mensaje{
+padding:40px;
+font-size:20px;
+max-width:700px;
+margin:auto;
+}
+
+/* TARJETAS */
+
+.team{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+padding:40px;
+}
+
+.card{
+background:rgb(248, 210, 210);
+border-radius:20px;
+padding:25px;
+width:220px;
+box-shadow:0 15px 35px rgba(60, 28, 28, 0.2);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.05);
+}
+
+.card h3{
+color:#091cec;
+}
+
+/* GALERIA */
+
+.gallery{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+padding:40px;
+}
+
+.gallery img{
+width:280px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(19, 12, 73, 0.2);
+transition:.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.08);
+}
+
+/* MURO */
+
+.wall{
+max-width:700px;
+margin:auto;
+display:grid;
+gap:20px;
+padding:40px;
+}
+
+.quote{
+background:rgb(230, 194, 194);
+padding:25px;
+border-radius:15px;
+font-size:18px;
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+/* FLORES */
+
+.flor{
+position:fixed;
+top:-20px;
+font-size:26px;
+animation:caer linear forwards;
+}
+
+@keyframes caer{
+0%{
+transform:translateY(-10px) rotate(0deg);
+opacity:1;
+}
+
+100%{
+transform:translateY(100vh) rotate(360deg);
+opacity:0;
+}
+}
+@media (max-width:768px){
+
+.hero h1{
+font-size:28px;
+}
+
+.intro h1{
+font-size:30px;
+padding:20px;
+}
+
+.mensaje{
+font-size:18px;
+padding:25px;
+}
+
+.team{
+flex-direction:column;
+align-items:center;
+}
+
+.card{
+width:90%;
+}
+
+.gallery img{
+width:90%;
+}
+
+}
+.muro{
+    padding:60px 20px;
+    text-align:center;
+}
+
+.muro h2{
+    font-size:40px;
+    margin-bottom:40px;
+}
+
+.frase{
+    background:#c1e0e6;
+    margin:20px auto;
+    padding:25px 30px;
+    border-radius:20px;
+    max-width:900px;
+    font-size:20px;
+    line-height:1.6;
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+    transition:0.3s;
+}
+
+.frase:hover{
+    transform:scale(1.03);
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="intro">
+
+<div class="sobre" id="sobre">
+
+<div class="solapa"></div>
+
+<div class="carta-texto">
+<h1>Feliz Día Internacional de la Mujer </h1>
+<p>Toca el corazón</p>
+</div>
+
+<button class="sello" onclick="abrirSobre()">❤️</button>
+
+</div>
+
+</div>
+
+
+<div class="content" id="contenido">
+
+<div class="hero">
+
+<h1 class="titulo-principal">🌸 Feliz Día de la Mujer 🌸</h1>
+
+<img src="foto-equipo.jpeg" class="hero-img">
+
+<p><strong>Gracias por su talento y por hacer este equipo extraordinario</strong></p>
+</div>
+
+
+<div class="mensaje">
+
+En este su día celebramos la fuerza, inteligencia y dedicación de cada una de ustedes.
+Su talento y energía hacen que este equipo sea especial.
+Gracias por existir e inspirarnos cada día.
+
+</div>
+
+
+<section>
+
+<h2>Nuestro Equipo 💜</h2>
+
+<div class="team">
+
+<div class="card">
+<h3>Emily</h3>
+<p>Energía positiva y apoyo constante que motiva al equipo. Siempre estas dispuesta a ayudar y contagiar tu entusiasmo en cada proyecto. Tu actitud optimista es clave para un ambiente laboral armonioso.</p>
+</div>
+
+<div class="card">
+<h3>Diana</h3>
+<p>La alegría que ilumina el equipo con su sonrisa y buen humor. Tienes una habilidad especial para levantar el ánimo en los momentos difíciles y fomentar la colaboración entre todos. Tu presencia es un verdadero motor de motivación.</p>
+</div>
+
+<div class="card">
+<h3>Lizeth</h3>
+<p>Creatividad en cada detalle que transforma ideas en soluciones innovadoras. Tu enfoque original impulsa al equipo a pensar fuera de lo convencional y buscar siempre la excelencia. Eres la chispa artística que inspira a todos.</p>
+</div>
+
+<div class="card">
+<h3>Noelia</h3>
+<p>Calma y equilibrio cuando se necesita, capaz de manejar situaciones con serenidad y eficacia. Tu capacidad para mantener la concentración ayuda a superar retos con confianza. Eres un pilar de estabilidad dentro del grupo.</p>
+</div>
+
+<div class="card">
+<h3>Marylin</h3>
+<p>La mente estratégica del equipo, siempre analizando y planificando con visión a largo plazo. Su pensamiento crítico asegura que cada acción esté alineada con los objetivos. Gracias a usted, el equipo avanza con claridad y propósito.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<h2>Momentos del Equipo 📸</h2>
+
+<div class="gallery">
+
+<img src="foto2.jpeg">
+<img src="foto1.jpeg">
+<img src="foto-equipo.jpeg">
+
+</div>
+
+</section>
+
+
+<section class="muro">
+
+<h2>Muro de Inspiración ✨</h2>
+
+<div class="frase">
+🌸 Las mujeres fuertes dejan huella en el mundo con su determinación, su sabiduría y la fuerza que nace de su corazón. Cada paso que dan abre camino a nuevas oportunidades, inspirando a quienes las rodean a creer en sí mismos y en todo lo que pueden lograr.
+</div>
+
+<div class="frase">
+💜 La inteligencia, la valentía y el trabajo en equipo crean grandes logros. Cuando mujeres talentosas se unen, nacen ideas poderosas, se superan desafíos y se construyen equipos capaces de transformar cualquier meta en realidad.
+</div>
+
+<div class="frase">
+✨ Cada mujer aquí aporta algo único y especial: talento, creatividad, dedicación y una visión que enriquece a todo el equipo. Esa diversidad de fortalezas es la que nos permite crecer, aprender y avanzar juntos hacia nuevos sueños.
+</div>
+
+<div class="frase">
+🌷 Gracias por la energía, el compromiso y la pasión que entregan cada día. Su trabajo y su inspiración hacen que este lugar sea más humano, más fuerte y lleno de oportunidades para todos.
+</div>
+
+<div class="frase">
+💖 Hoy celebramos no solo sus logros, sino también su resiliencia, su liderazgo y la inspiración que brindan cada día. Gracias por demostrar que cuando las mujeres se apoyan y trabajan juntas, el mundo se llena de esperanza.
+</div>
+
+</section>
+
+</div>
+
+
+<audio id="musica" loop>
+<source src="audio2.mpeg" type="audio/mpeg">
+</audio>
+
+
+<script>
+
+function abrirSobre(){
+
+let sobre=document.getElementById("sobre")
+
+sobre.classList.add("abierto")
+
+setTimeout(()=>{
+
+document.querySelector(".intro").style.display="none"
+document.getElementById("contenido").style.display="block"
+
+let musica=document.getElementById("musica")
+musica.play().catch(()=>{})
+
+flores()
+
+},1000)
+
+}
+
+let carta=document.getElementById("carta")
+
+carta.classList.add("abierta")
+
+setTimeout(()=>{
+
+document.querySelector(".intro").style.display="none"
+document.getElementById("contenido").style.display="block"
+
+let musica=document.getElementById("musica")
+musica.play().catch(()=>{})
+
+flores()
+
+},1000)
+
+
+function crearFlor(){
+
+let flores=["🌸","🌺","🌹","🌷","🌻","💖"]
+
+let f=document.createElement("div")
+
+f.classList.add("flor")
+
+f.innerHTML=flores[Math.floor(Math.random()*flores.length)]
+
+f.style.left=Math.random()*100+"%"
+
+f.style.animationDuration=3+Math.random()*5+"s"
+
+document.body.appendChild(f)
+
+setTimeout(()=>{
+f.remove()
+},8000)
+
+}
+
+function flores(){
+
+setInterval(crearFlor,400)
+
+}
+
+</script>
+
+</body>
+</html>
