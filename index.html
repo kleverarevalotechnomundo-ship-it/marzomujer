@@ -392,6 +392,41 @@ width:90%;
 .frase:hover{
     transform:scale(1.03);
 }
+    /* =============================
+   Ajustes para móviles (solo este bloque)
+============================= */
+@media (max-width:768px){
+
+  /* Sobre y corazón */
+  .sobre{
+    width:90%;
+    height:auto;
+    padding:20px;
+  }
+  .solapa{
+    border-left:45% solid transparent;
+    border-right:45% solid transparent;
+    border-top:80px solid #e6bcbc;
+  }
+  .sello{
+    font-size:24px;
+  }
+
+  /* Hero y texto */
+  .hero h1{ font-size:28px; }
+  .intro h1{ font-size:30px; padding:20px; }
+  .mensaje{ font-size:18px; padding:25px; }
+
+  /* Cards y galería */
+  .team{ flex-direction:column; align-items:center; }
+  .card{ width:90%; }
+  .gallery img{ width:90%; }
+
+  /* Flores */
+  .flor{
+    font-size:20px;
+  }
+}
 </style>
 
 </head>
@@ -592,4 +627,5 @@ setInterval(crearFlor,400)
 </script>
 
 </body>
+
 </html>
